@@ -16,7 +16,7 @@ export default function Profile() {
           Harpreet Kaur
         </h1>
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-300">
-          MERN Stack Developer & Cyber Security Enthusiast
+          Web Developer & Cyber Security Enthusiast
         </h2>
         <p className="text-gray-400 leading-relaxed max-w-md">
           Passionate about crafting secure, scalable web applications and protecting digital systems. 
