@@ -1,180 +1,193 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import {
+  User,
+  Mail,
+  Phone,
+  MessageCircle,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 
 export default function Contact() {
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    message: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = () => {
+  const ContactData = [
+    { label: "Name", placeholder: "Enter your name", type: "text", icon: User, keyName: "name" },
+    { label: "Email Id", placeholder: "Enter your email", type: "email", icon: Mail, keyName: "email" },
+    { label: "Mobile No", placeholder: "Enter your mobile number", type: "tel", icon: Phone, keyName: "mobile" },
+    { label: "Message", placeholder: "Enter your message...", type: "textarea", icon: MessageCircle, keyName: "message" },
+  ];
+
+  const socialLinks = [
+    { icon: Github, href: "https://github.com/itsharpreet118", color: "hover:text-gray-300" },
+    { icon: Linkedin, href: "https://linkedin.com/in/itsharpreet118", color: "hover:text-blue-400" },
+    { icon: Twitter, href: "https://twitter.com/", color: "hover:text-sky-400" },
+  ];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => setIsSubmitting(false), 2000);
-  };
-
-  // Parent animation container for staggered children
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.25, delayChildren: 0.3 },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setData({ name: "", email: "", mobile: "", message: "" });
+    }, 2000);
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white overflow-hidden px-6">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-neutral-950 text-white px-6 py-16 overflow-hidden relative">
+      {/* Floating background glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(56,189,248,0.15),rgba(255,255,255,0))] blur-3xl" />
 
-      {/* Soft Floating Orbs Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(12)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-600/10 blur-2xl"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              scale: Math.random() * 0.8 + 0.4,
-            }}
-            animate={{
-              y: [0, 50, -50, 0],
-              x: [0, -30, 30, 0],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 10 + Math.random() * 10,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: "easeInOut",
-            }}
-            style={{
-              width: Math.random() * 120 + 80,
-              height: Math.random() * 120 + 80,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Animated Heading */}
-      <motion.h1
-        variants={item}
-        initial="hidden"
-        animate="show"
-        className="text-5xl md:text-6xl font-extrabold mb-10 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(56,189,248,0.4)]"
-      >
-       Get in <span className="text-white">Touch</span>
-      </motion.h1>
-
-      {/* Contact Card */}
+      {/* LEFT SECTION (Info Table) */}
       <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        whileHover={{
-          rotateX: 5,
-          rotateY: -5,
-          scale: 1.03,
-          transition: { type: "spring", stiffness: 120 },
-        }}
-        className="relative bg-gray-900/70 border border-gray-800 backdrop-blur-xl rounded-3xl p-8 md:p-12 w-full max-w-md shadow-2xl overflow-hidden"
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        className="w-full md:w-1/2 space-y-8 px-4 md:px-12 z-10"
       >
-        {/* Glowing Gradient Border Animation */}
+        <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+          Let’s Connect
+        </h1>
+
+        <p className="text-gray-300 text-lg leading-relaxed">
+          Have a project or just want to say hi? Fill out the form or reach out directly.
+        </p>
+
+        {/* Info "Table" */}
+        <div className="bg-gray-900/60 rounded-2xl border border-gray-800 p-6 backdrop-blur-md shadow-xl space-y-4">
+          <div className="flex items-center gap-3">
+            <Mail className="text-cyan-400 w-5 h-5" />
+            <span>itsharpreet118@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Phone className="text-cyan-400 w-5 h-5" />
+            <span>+91 98126 63301</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <MapPin className="text-cyan-400 w-5 h-5" />
+            <span>Haryana, India</span>
+          </div>
+        </div>
+
+        {/* Social Media Icons */}
+        <div className="flex gap-5 mt-6">
+          {socialLinks.map((social, i) => (
+            <motion.a
+              key={i}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 8 }}
+              whileTap={{ scale: 0.9 }}
+              className={`p-3 rounded-full bg-gray-800/60 border border-gray-700 text-gray-400 transition-all duration-300 ${social.color}`}
+            >
+              <social.icon className="w-5 h-5" />
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* RIGHT SECTION (Form) */}
+      <motion.form
+        initial={{ opacity: 0, x: 80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        onSubmit={handleSubmit}
+        className="w-full md:w-1/2 bg-gray-900/70 border border-gray-800 rounded-3xl p-8 md:p-12 mt-10 md:mt-0 backdrop-blur-2xl shadow-2xl relative z-10 overflow-hidden"
+      >
+        {/* Animated Gradient Border */}
         <motion.div
-          className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-50"
+          className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-40"
           animate={{
             backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
           }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
           style={{ backgroundSize: "200% 200%" }}
         />
 
-        {/* Inner Content */}
-        <motion.div
-          variants={item}
-          className="relative z-10 space-y-6 text-center"
-        >
-          <motion.h2
-            variants={item}
-            className="text-2xl font-semibold text-cyan-400"
-          >
-            Harpreet Kaur
-          </motion.h2>
+        <div className="relative z-10 space-y-6">
+          {ContactData.map((field, index) => (
+            <motion.div key={index} whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+              <label className="text-sm text-gray-400">{field.label}</label>
+              <div className="flex items-center gap-3 bg-gray-800/80 border border-gray-700 rounded-xl px-4 py-3 mt-2 focus-within:ring-2 focus-within:ring-cyan-500 transition-all duration-300">
+                <field.icon className="text-cyan-400 w-5 h-5" />
+                {field.type === "textarea" ? (
+                  <textarea
+                    name={field.keyName}
+                    placeholder={field.placeholder}
+                    value={data[field.keyName]}
+                    onChange={handleChange}
+                    className="bg-transparent w-full text-gray-200 outline-none resize-none h-24 placeholder-gray-500"
+                  />
+                ) : (
+                  <input
+                    type={field.type}
+                    name={field.keyName}
+                    placeholder={field.placeholder}
+                    value={data[field.keyName]}
+                    onChange={handleChange}
+                    className="bg-transparent w-full text-gray-200 outline-none placeholder-gray-500"
+                  />
+                )}
+              </div>
+            </motion.div>
+          ))}
 
-          <motion.p variants={item} className="text-gray-300">
-            Email:{" "}
-            <a
-              href="mailto:itsharpreet118@gmail.com"
-              className="text-blue-400 hover:text-purple-400 transition-all duration-300 underline-offset-4 hover:underline"
-            >
-              itsharpreet118@gmail.com
-            </a>
-          </motion.p>
-
-          {/* Message Box */}
-          <motion.div variants={item} className="flex flex-col gap-3 mt-6">
-            <label className="text-sm text-gray-400 tracking-wide">
-              Your Message
-            </label>
-            <motion.textarea
-              whileFocus={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-              placeholder="Type your message..."
-              className="bg-gray-800/80 border border-gray-700 rounded-xl p-3 text-gray-200 resize-none h-28 focus:outline-none focus:ring-2 focus:ring-cyan-500/70 placeholder-gray-500"
-            ></motion.textarea>
-          </motion.div>
-
-          {/* Animated Submit Button */}
+          {/* Submit Button */}
           <motion.button
-            onClick={handleSubmit}
-            variants={item}
+            type="submit"
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 0px 25px rgba(56,189,248,0.6)",
             }}
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className={`mt-4 w-full font-semibold py-3 rounded-xl transition-all duration-300 relative overflow-hidden ${
-              isSubmitting
-                ? "bg-gradient-to-r from-purple-600 to-blue-600 cursor-not-allowed"
-                : "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-blue-500 hover:to-purple-600"
-            }`}
+            className="relative w-full mt-6 py-3 font-semibold rounded-xl flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-blue-500 hover:to-purple-600 transition-all"
+            disabled={isSubmitting}
           >
             {isSubmitting ? (
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-                className="border-2 border-white/60 border-t-transparent w-6 h-6 rounded-full mx-auto"
+                className="border-2 border-white/60 border-t-transparent w-6 h-6 rounded-full"
               ></motion.div>
             ) : (
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="tracking-wide"
-              >
-                Send Message
-              </motion.span>
-            )}
-
-            {/* Pulsing Glow Effect */}
-            {!isSubmitting && (
-              <motion.div
-                className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500/40 to-blue-600/30 opacity-0"
-                whileHover={{
-                  opacity: 0.4,
-                  scale: 1.1,
-                  transition: { duration: 0.5 },
-                }}
-              />
+              <>
+                <Send className="w-5 h-5" /> Send Message
+              </>
             )}
           </motion.button>
-        </motion.div>
-      </motion.div>
+
+          {isSubmitted && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center text-green-400 font-medium mt-4"
+            >
+              ✅ Message Sent Successfully!
+            </motion.p>
+          )}
+        </div>
+      </motion.form>
     </div>
   );
 }

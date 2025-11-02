@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Tech from './components/Tech'
 import Expre from './components/Expre'
+import Project from './components/Project'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import PageNotFound from './components/PageNotFound'
@@ -16,6 +17,7 @@ export default function App() {
       <Profile/>
       <Tech/>
       <Expre/>
+      <Project/>
       <Contact/>
       <Footer/>
       <PageNotFound/> 
