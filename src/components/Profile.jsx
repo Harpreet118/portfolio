@@ -86,7 +86,7 @@ export default function Profile() {
           className="relative"
         >
           <motion.img
-            src="https://res.cloudinary.com/dzun1wqhd/image/upload/v1768034734/WhatsApp_Image_2026-01-03_at_7.20.18_PM_onffdi.jpg"
+            src="https://res.cloudinary.com/dzun1wqhd/image/upload/v1768033619/WhatsApp_Image_2026-01-03_at_7.20.21_PM_j32gx8.jpg"
             alt="Profile"
             className="rounded-full w-72 h-72 md:w-80 md:h-80 border-4 border-cyan-400 shadow-[0_0_40px_rgba(6,182,212,0.6)]"
             whileHover={{ scale: 1.08 }}
