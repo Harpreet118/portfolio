@@ -1,12 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
     { icon: Github, href: "https://github.com/itsharpreet118", color: "hover:text-gray-300" },
     { icon: Linkedin, href: "https://linkedin.com/in/itsharpreet118", color: "hover:text-blue-400" },
-    { icon: Twitter, href: "https://twitter.com/", color: "hover:text-sky-400" },
     { icon: Mail, href: "mailto:itsharpreet118@gmail.com", color: "hover:text-red-400" },
   ];
 
@@ -30,25 +29,13 @@ export default function Footer() {
       {/* Moving Glow Lines */}
       <motion.div
         className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-40"
-        animate={{
-          x: ["-100%", "100%"],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 6,
-          ease: "linear",
-        }}
+        animate={{ x: ["-100%", "100%"] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
       />
       <motion.div
         className="absolute bottom-10 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-40"
-        animate={{
-          x: ["100%", "-100%"],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 8,
-          ease: "linear",
-        }}
+        animate={{ x: ["100%", "-100%"] }}
+        transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
       />
 
       {/* Content Section */}
@@ -57,11 +44,7 @@ export default function Footer() {
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: [0, -5, 0] }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
           className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 text-3xl font-bold tracking-wide"
         >
           Let’s Connect & Collaborate 🤝
@@ -120,14 +103,8 @@ export default function Footer() {
       {/* Animated Bottom Border Glow */}
       <motion.div
         className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-indigo-500"
-        animate={{
-          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-        }}
+        animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
         style={{ backgroundSize: "200% 200%" }}
       />
     </footer>

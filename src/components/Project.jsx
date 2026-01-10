@@ -6,7 +6,7 @@ export default function Project() {
   const ProjectData = [
     {
       projectName: "PortFolio",
-      img: "https://www.aimshop.com/cdn/shop/products/LinkAirTempSensor_IAT1-8.png?v=1617964837&width=416",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN8ZRe8FvVKwdMTGPYX836104u8wuckjL9Ew&s",
       des: "A modern portfolio website built with React and TailwindCSS to showcase my projects and skills.",
       tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Lucide Icons"],
       startDate: "02-Oct-2025",
@@ -26,7 +26,7 @@ export default function Project() {
         "Cloudinary",
         "Framer Motion",
       ],
-      img: "https://www.aimshop.com/cdn/shop/products/LinkAirTempSensor_IAT1-8.png?v=1617964837&width=416",
+      img: "https://www.trukky.com/blog/wp-content/uploads/2017/08/etrucking.png",
       startDate: "05-Nov-2025",
       endDate: "07-April-2026",
       deploymentLink: "https://manoj-dev.github.io/Portfolio/",
@@ -35,7 +35,7 @@ export default function Project() {
     },
     {
       projectName: "Messenger App",
-      img: "https://www.aimshop.com/cdn/shop/products/LinkAirTempSensor_IAT1-8.png?v=1617964837&width=416",
+      img: "https://www.intergy.com.au/wp-content/uploads/2019/08/featured-ensure-your-project-is-a-success-tips-from-a-technical-project-manager.jpg",
       deploymentLink: "https://manoj-dev.github.io/Portfolio/",
       des: "Real-time chat application with user authentication and media sharing.",
       tech: [
@@ -53,7 +53,7 @@ export default function Project() {
     },
     {
       projectName: "Task Manager",
-      img: "https://www.aimshop.com/cdn/shop/products/LinkAirTempSensor_IAT1-8.png?v=1617964837&width=416",
+      img: "https://www.projectaccelerator.co.uk/wp-content/uploads/2020/08/branding-project.jpg",
       des: "A task management app that helps users create, assign, and track daily tasks efficiently.",
       tech: [
         "React",
