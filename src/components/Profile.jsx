@@ -45,7 +45,7 @@ export default function Profile() {
         {/* Buttons */}
         <div className="flex gap-4 pt-4">
           <motion.a
-            whileHover={{ scale: 1.1, boxShadow: "0 0 25px rgba(6,182,212,0.8)" }}
+            whileHover={{ scale: 1.1, boxShadow: "0 0 25px rgba(6,182,212,0.6)" }}
             className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full font-semibold"
           >
             View Projects
@@ -64,7 +64,7 @@ export default function Profile() {
           {[Github, Linkedin, Mail].map((Icon, i) => (
             <motion.a
               key={i}
-              whileHover={{ scale: 1.2, rotate: 10, backgroundColor: "rgb(6 182 212 / 0.3)" }}
+              whileHover={{ scale: 1.2 }}
               className="p-3 bg-gray-800 rounded-full transition-all"
             >
               <Icon className="w-5 h-5" />
@@ -73,7 +73,7 @@ export default function Profile() {
         </div>
       </motion.div>
 
-      {/* 💫 Right Section */}
+      {/* 💼 RIGHT SECTION – CLEAN CIRCULAR OFFICE IMAGE */}
       <motion.div
         initial={{ x: 80, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -81,21 +81,27 @@ export default function Profile() {
         className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 z-10"
       >
         <motion.div
-          animate={{ y: [0, -15, 0], rotate: [0, 1.5, -1.5, 0] }}
-          transition={{ repeat: Infinity, duration: 6 }}
-          className="relative"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ repeat: Infinity, duration: 5 }}
+          className="relative flex items-center justify-center"
         >
-          <motion.img
-            src="https://res.cloudinary.com/dzun1wqhd/image/upload/v1768033619/WhatsApp_Image_2026-01-03_at_7.20.21_PM_j32gx8.jpg"
-            alt="Profile"
-            className="rounded-full w-72 h-72 md:w-80 md:h-80 border-4 border-cyan-400 shadow-[0_0_40px_rgba(6,182,212,0.6)]"
-            whileHover={{ scale: 1.08 }}
-          />
-
+          {/* Gradient Circular Frame */}
           <motion.div
-            className="absolute inset-0 rounded-full border-4 border-cyan-400 opacity-30"
-            animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.1, 0.3] }}
-            transition={{ repeat: Infinity, duration: 2.5 }}
+            className="relative z-10 w-72 h-72 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-br from-cyan-400 to-blue-600"
+            whileHover={{ scale: 1.05 }}
+          >
+            <img
+              src="https://res.cloudinary.com/dzun1wqhd/image/upload/v1768033619/WhatsApp_Image_2026-01-03_at_7.20.21_PM_j32gx8.jpg"
+              alt="Profile"
+              className="w-full h-full object-cover rounded-full border-4 border-gray-900"
+            />
+          </motion.div>
+
+          {/* Soft Professional Glow */}
+          <motion.div
+            className="absolute w-80 h-80 rounded-full border border-cyan-400/30"
+            animate={{ scale: [1, 1.12, 1] }}
+            transition={{ duration: 3, repeat: Infinity }}
           />
         </motion.div>
       </motion.div>
