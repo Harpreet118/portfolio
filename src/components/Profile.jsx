@@ -91,7 +91,7 @@ export default function Profile() {
             whileHover={{ scale: 1.05 }}
           >
             <img
-              src="https://res.cloudinary.com/dzun1wqhd/image/upload/v1768033619/WhatsApp_Image_2026-01-03_at_7.20.21_PM_j32gx8.jpg"
+              src="https://res.cloudinary.com/dzun1wqhd/image/upload/v1769776641/WhatsApp_Image_2026-01-03_at_7.20.21_PM_oevkt6.jpg"
               alt="Profile"
               className="w-full h-full object-cover rounded-full border-4 border-gray-900"
             />
