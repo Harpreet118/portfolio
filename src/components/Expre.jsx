@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Expre() {
   const data = [
     {
-      logo: "",
+      logo: "https://media.licdn.com/dms/image/v2/D560BAQFhCa8xgv_ZxA/company-logo_200_200/company-logo_200_200/0/1707312152907?e=2147483647&v=beta&t=_yEi1VWkdgazb44Q7BpEobeBJIUIty4zVj9GDqPR0lY",
       CompanyName: "Sqilco",
       StartDate: "12-March-2024",
       EndDate: "27-Feb-2025",
@@ -12,7 +12,7 @@ export default function Expre() {
       Des: "Worked on full-stack web development using MongoDB, Express, React, and Node.js. Developed responsive UI components and optimized backend APIs.",
     },
     {
-      logo: "",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwDuPvh_xBnLzkr7_Lww5Qc92zjxlly9t98A&s",
       CompanyName: "Hartron Advance Skill Centre",
       StartDate: "04-June-2025",
       EndDate: "Present",

@@ -34,12 +34,11 @@ export default function Profile() {
         </motion.h1>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-300">
-          Web Developer & Cyber Security Enthusiast
+          Full Stack Developer
         </h2>
 
         <p className="text-gray-400 leading-relaxed max-w-md">
-          Passionate about crafting secure, scalable web applications and protecting digital systems.
-          Experienced in full-stack development with strong cybersecurity fundamentals.
+          I am a passionate and detail-oriented Full Stack Developer with strong expertise in building scalable, high-performance web applications. I specialize in designing responsive frontends and developing secure, optimized backends that deliver seamless user experiences.
         </p>
 
         {/* Buttons */}
