@@ -64,13 +64,13 @@ export default function Expre() {
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
               />
-              <motion.img
-                src={item.logo}
-                alt={item.CompanyName}
-                className="w-20 h-20 object-contain relative z-10"
-                whileHover={{ scale: 1.15, rotate: 15 }}
-                transition={{ duration: 0.4 }}
-              />
+             <motion.img
+  src={item.logo}
+  alt={item.CompanyName}
+  className="w-20 h-20 object-cover rounded-full relative z-10"
+  whileHover={{ scale: 1.15, rotate: 15 }}
+  transition={{ duration: 0.4 }}
+/>
 
               {/* Vertical timeline line */}
               <div className="hidden md:block absolute right-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600 opacity-50" />
